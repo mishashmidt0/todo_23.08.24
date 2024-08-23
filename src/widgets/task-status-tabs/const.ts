@@ -1,14 +1,14 @@
-export const ITEMS  = [
-    {
-        key: '1',
-        label: 'All Tasks',
-    },
-    {
-        key: '2',
-        label: 'Active Tasks',
-    },
-    {
-        key: '3',
-        label: 'Completed Tasks',
-    },
-]
+export const ITEMS = [
+  {
+    key: 'all',
+    label: 'All Tasks',
+  },
+  {
+    key: 'done',
+    label: 'Active Tasks',
+  },
+  {
+    key: 'undone',
+    label: 'Completed Tasks',
+  },
+];

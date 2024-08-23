@@ -1,7 +1,3 @@
 export const TaskCard = () => {
-    return (
-        <div>
-            TaskCard
-        </div>
-    )
-}
+  return <div>TaskCard</div>;
+};
