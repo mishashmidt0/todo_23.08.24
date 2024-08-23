@@ -9,11 +9,7 @@ import { DetailsTaskModal } from '@/widgets/details-task-modal/details-task-moda
 import { NewTaskModal } from '@/widgets/new-task-modal/new-task-modal';
 
 export default function Home() {
-  const { isFetching, isError, error, isSuccess } = useGetTodosQuery();
-
-  if (isError) {
-    return <div>Error: {error}</div>;
-  }
+  const { isFetching, isSuccess } = useGetTodosQuery();
 
   if (!isSuccess && !isFetching) {
     return <div>Something went wrong</div>;

@@ -1,12 +1,12 @@
 'use client';
 
-import { useMemo } from 'react';
+import React, { useMemo } from 'react';
 
-import { List, Typography } from 'antd';
+import { Checkbox, List, Typography } from 'antd';
 import toast from 'react-hot-toast';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { AddTask, DeleteTask, ToggleTask } from '@/features';
+import { AddTask, DeleteTask } from '@/features';
 import {
   useDeleteTodoMutation,
   useGetTodosQuery,
@@ -43,7 +43,7 @@ export const TaskList = () => {
     });
   }, [data, filter]);
 
-  const handleDelete = async (e, id: number) => {
+  const handleDelete = async (e: React.MouseEvent, id: number) => {
     e.preventDefault();
     e.stopPropagation();
 
@@ -78,7 +78,7 @@ export const TaskList = () => {
         size='large'
         bordered
         dataSource={filteredData}
-        renderItem={(item) => (
+        renderItem={(item: ITask) => (
           <List.Item
             className={cn(
               'flex cursor-pointer items-center justify-between gap-4 transition-shadow duration-500 hover:shadow-xl',
@@ -102,13 +102,14 @@ export const TaskList = () => {
             </Typography>
 
             <div className={'space-x-8'}>
-              <ToggleTask
+              <Checkbox
                 disabled={isLoading}
                 checked={item.checked}
                 onChange={(e) => {
                   void handleUpdate({ ...item, checked: e.target.checked });
                 }}
               />
+
               <DeleteTask
                 disabled={isLoading}
                 onClick={(e) => {

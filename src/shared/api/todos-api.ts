@@ -2,7 +2,7 @@ import { api } from '@/shared/api';
 
 export const todosApi = api.injectEndpoints({
   endpoints: (builder) => ({
-    getTodos: builder.query<any, any>({
+    getTodos: builder.query<any, void>({
       query: () => 'todos',
       providesTags: ['Todos'],
     }),

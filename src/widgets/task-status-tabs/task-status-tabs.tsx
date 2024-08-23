@@ -1,12 +1,14 @@
 'use client';
 
+import React from 'react';
+
+import { Tabs } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { ITEMS } from './const';
 
 import type { RootState } from '@/shared/store';
 import { setFilter } from '@/shared/store/filter-task-slice';
-import { ATabs } from '@/shared/ui';
 
 export const TaskStatusTabs = () => {
   const dispatch = useDispatch();
@@ -17,7 +19,7 @@ export const TaskStatusTabs = () => {
 
   return (
     <div>
-      <ATabs defaultActiveKey={filter} items={ITEMS} onChange={onChange} />
+      <Tabs defaultActiveKey={filter} items={ITEMS} onChange={onChange} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-type ModalName = 'NewTaskModal' | 'DetailsTaskModal';
+type ModalName = 'NewTaskModal' | 'DetailsTaskModal' | '';
 
 interface ModalState {
   name: ModalName;

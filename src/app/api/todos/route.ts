@@ -1,4 +1,4 @@
-import { NextResponse } from 'next/server';
+import { type NextRequest, NextResponse } from 'next/server';
 
 import { TODOS } from '@/shared/mock/todos';
 
@@ -8,7 +8,7 @@ export async function GET() {
   return NextResponse.json(TODOS);
 }
 
-export async function POST(request) {
+export async function POST(request: NextRequest) {
   const newData = await request.json();
 
   newData.id = TODOS.length + 1;
@@ -18,7 +18,7 @@ export async function POST(request) {
   return NextResponse.json(newData);
 }
 
-export async function PUT(request) {
+export async function PUT(request: NextRequest) {
   const { id, title, description, checked } = await request.json();
   const index = TODOS.findIndex((item) => item.id === id);
 
@@ -32,7 +32,7 @@ export async function PUT(request) {
   return NextResponse.json(TODOS[index]);
 }
 
-export async function DELETE(request) {
+export async function DELETE(request: NextRequest) {
   const { id } = await request.json();
   const index = TODOS.findIndex((item) => item.id === id);
 

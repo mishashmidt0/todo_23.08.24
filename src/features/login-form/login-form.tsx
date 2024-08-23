@@ -26,7 +26,6 @@ export const LoginForm: React.FC = () => {
       router.push('/');
     } catch (error) {
       console.error('Failed to login:', error);
-      toast.error(error);
     }
   };
 

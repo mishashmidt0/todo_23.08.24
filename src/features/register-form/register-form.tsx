@@ -26,7 +26,6 @@ export const RegisterForm: React.FC = () => {
       router.push('/');
     } catch (error) {
       console.error('Failed to register:', error);
-      toast.success(error);
     }
   };
 
