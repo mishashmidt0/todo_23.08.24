@@ -1,6 +1,6 @@
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit';
 
-type FilterName = 'all' | 'done' | 'undone';
+export type FilterName = 'all' | 'done' | 'undone';
 
 interface FilterState {
   filter: FilterName;

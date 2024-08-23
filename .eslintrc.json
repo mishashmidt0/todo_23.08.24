@@ -98,6 +98,7 @@
       }
     ],
     "no-shadow": "off",
+
     "no-debugger": "error",
     "no-unused-vars": "off",
     "no-magic-numbers": [
@@ -138,6 +139,7 @@
     "@typescript-eslint/no-misused-promises": ["off"],
     "@typescript-eslint/triple-slash-reference": ["off"],
     "@typescript-eslint/consistent-type-assertions": ["off"],
+    "@typescript-eslint/no-invalid-void-type": ["off"],
     "prettier/prettier": [
       "error",
       {

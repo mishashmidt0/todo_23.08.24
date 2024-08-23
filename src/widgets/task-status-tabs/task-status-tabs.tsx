@@ -8,13 +8,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ITEMS } from './const';
 
 import type { RootState } from '@/shared/store';
-import { setFilter } from '@/shared/store/filter-task-slice';
+import { type FilterName, setFilter } from '@/shared/store/filter-task-slice';
 
 export const TaskStatusTabs = () => {
   const dispatch = useDispatch();
   const { filter } = useSelector((state: RootState) => state.filter);
+
   const onChange = (key: string) => {
-    dispatch(setFilter(key));
+    const filterKey = key as FilterName;
+
+    dispatch(setFilter(filterKey));
   };
 
   return (

@@ -112,7 +112,7 @@ export const TaskList = () => {
 
               <DeleteTask
                 disabled={isLoading}
-                onClick={(e) => {
+                onClick={(e: React.MouseEvent) => {
                   void handleDelete(e, item.id);
                 }}
               />
